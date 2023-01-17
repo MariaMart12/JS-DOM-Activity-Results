@@ -1,62 +1,53 @@
-//Your code goes here
-
 // 1. Click the button to display your name
-//Selectors
 let nameButton = document.getElementById('btnName')
-//Function
 function showName () {
- document.getElementById("myName").value = "test";
+ document.getElementById("myName").value = "Maria";
+ document.getElementById("myName").style.color = "blue";
 }
-//Call the event
 nameButton.addEventListener('click', showName)
 
 //2. Switch lights on mouseover
-//Selectors
 const lightOn = document.getElementById('imageOff')
-
-//Function
 function turnLightOn () {
   lightOn.src = "images/lighton.png"
 }
 function turnLightOff () {
   lightOn.src = "images/lightoff.png"
 }
-//Call the event
 lightOn.addEventListener('mouseover', turnLightOn)
 lightOn.addEventListener('mouseout', turnLightOff)
 
 //3. Double click to display content
-//Selectors
 const para = document.getElementById('displayPara')
 const btnDbName = document.getElementById('btndbName')
+const img = document.getElementById("taskThree"); 
 /*Function {
-  //some code here
   //create a new img element */
   function showPara () {
    para.innerText = "can you see me?"
+   img.src = "https://picsum.photos/200/301";
   }
   btnDbName.addEventListener('dblclick', showPara)
-//Call the event
 
 // 4. Traffic Lights
-//Selectors
 const BtnStop = document.getElementById('btnStop')
 const BtnReady = document.getElementById('btnReady')
 const BtnGo = document.getElementById('btnGo')
-//Function 1
 function redOn () {
   document.getElementById("stopDiv").style.backgroundColor = 'red'
+  document.getElementById("readyDiv").style.backgroundColor = 'black'
+  document.getElementById("goDiv").style.backgroundColor = 'black'
 }
-//Function 2
 function yellowOn () {
   document.getElementById("readyDiv").style.backgroundColor = 'yellow'
+  document.getElementById("stopDiv").style.backgroundColor = 'black'
+  document.getElementById("goDiv").style.backgroundColor = 'black'
 }
-//Function 3
 function greenOn () {
   document.getElementById("goDiv").style.backgroundColor = 'green'
+  document.getElementById("readyDiv").style.backgroundColor = 'black'
+  document.getElementById("stopDiv").style.backgroundColor = 'black'
 }
-
-//Call the events
 BtnStop.addEventListener('click', redOn)
 BtnReady.addEventListener('click', yellowOn)
 BtnGo.addEventListener('click', greenOn)
@@ -71,31 +62,25 @@ btn.addEventListener('click', changeBorderCol)
 
 //6. validate the box [length should be more than 8 characters]
 const btnValidate = document.getElementById('btnSub2')
-const myInput = document.getElementById('myName2').value
-
+const myInput = document.getElementById('myName2')
+const displayErr = document.getElementById('errMsg')
 function toValidate() {
-  if (myInput.length < 8 || myInput === "" ){         //myInput
+  if (myInput.value === " " || myInput.value.length < 8){         
    alert ("Type in more than 8 characters")
    return false
-  //  return console.error();(myInput, "Please Enter More Than 8 Characters");   
    } else { 
-  console.log("all good")
-  //   setSuccess(myInput);
+    alert("all good")
+    return true
   } 
 }; 
- btnValidate.addEventListener('click', toValidate)
-
-
-
- 
+btnValidate.addEventListener('click', toValidate)
 
 // 7.create a list of hobbies
 const hobbiesBtn = document.getElementById('btnHobbies')
-const myHobbies = ['drawing','sleeping','coffeetime'];
+const myHobbies = ['drawing','sudoku','reading'];
 
  function showHobbies () {
  for (i=0; i < myHobbies.length; i++){
-    //console.log(myHobbies[i])
     textPrompt = prompt(`My hobbies are: ${myHobbies[i]}`, "see more!")
   } 
 } 
